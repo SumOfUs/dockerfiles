@@ -16,5 +16,7 @@ RUN apk -v --update add \
     apk -v --purge del py-pip && \
     rm /var/cache/apk/*
 
+RUN gem install bundler
+
 ENV PATH "$PATH:~/.local/bin"
 
