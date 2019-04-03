@@ -1,29 +1,9 @@
-FROM ruby:2.6.1-alpine as ruby
+FROM circleci/ruby:2.6-stretch-node-browsers-legacy 
 
-RUN gem install bundler
-RUN bundle config --global silence_root_warning 1
+RUN sudo apt-get install -y gettext-base && sudo apt-get install python -qq && sudo apt-get install -y python-pip libpython-dev
 
-RUN apk -v --update add \
-      python \
-      py-pip \
-      groff \
-      less \
-      mailcap \
-      bash \
-      nodejs \
-      yarn \
-      tzdata \
-      git \
-    && pip install --upgrade awscli==1.14.5 s3cmd==2.0.1 python-magic \
-    && apk -v --purge del py-pip \
-    && apk add flow --update-cache --repository http://dl.alpinelinux.org/alpine/edge/testing/ \
-    && apk add build-base \
-      ruby-dev \
-      imagemagick6-dev \
-      imagemagick6 \
-      zlib-dev \
-      postgresql-dev \ 
-    && rm /var/cache/apk/*
+RUN pip install awscli --upgrade --user
+
+RUN sudo npm install -g yarn
 
 ENV PATH "$PATH:~/.local/bin"
-
