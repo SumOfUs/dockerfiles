@@ -7,7 +7,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
   && sudo apt-get update
 
 # Add packages:
-RUN sudo apt-get install yarn python3-pip gettext-base \
+RUN sudo apt-get install yarn python3-pip gettext-base imagemagick libmagickcore-dev libmagickwand-dev \
   && pip3 install awscli --upgrade --user
 
 # Set path for awscli
