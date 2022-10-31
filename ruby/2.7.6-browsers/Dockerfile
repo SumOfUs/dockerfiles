@@ -14,4 +14,4 @@ RUN sudo apt-get install yarn python3-pip gettext-base \
 ENV PATH "$PATH:~/.local/bin"
 
 # Update bundler
-RUN gem install bundler:2.3.15
+RUN gem install bundler:2.3.24
