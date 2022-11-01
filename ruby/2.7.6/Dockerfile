@@ -2,13 +2,14 @@ ARG BASE_IMAGE=amd64/ruby
 ARG BASE_TAG=2.7.6
 ARG BASE_IMAGE=${BASE_IMAGE}:${BASE_TAG}
 
-FROM ${BASE_IMAGE} AS builder
+FROM ${BASE_IMAGE}
 
 RUN apt-get update -qq \
   && apt-get install -y \
   build-essential \
   ca-certificates \
   curl \
+  gettext-base \
   git \
   gnupg \
   imagemagick \
@@ -18,6 +19,7 @@ RUN apt-get update -qq \
   python2 \
   python3-pip \
   shared-mime-info \
+  zip \
   && mkdir -p /etc/apt/keyrings \
   && curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg \
   && echo \
