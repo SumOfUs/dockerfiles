@@ -14,6 +14,7 @@ RUN apt-get update -qq \
   gnupg \
   imagemagick \
   jest \
+  jq \
   libpq-dev \
   lsb-release \
   python2 \
