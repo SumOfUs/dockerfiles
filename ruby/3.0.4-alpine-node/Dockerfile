@@ -4,8 +4,8 @@ RUN apk -v --update add \
       build-base \
       bash \
       ruby-dev \
-      imagemagick6-dev \
-      imagemagick6 \
+      imagemagick-dev \
+      imagemagick \
       libxml2 \
       libxml2-dev \
       nodejs \
