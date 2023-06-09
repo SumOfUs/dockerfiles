@@ -11,7 +11,7 @@ RUN apk -v --update add \
       nodejs \
       zlib-dev \
       postgresql-dev \
-      mysql \
+      mysql-dev \
       tzdata \
       git \
     && rm /var/cache/apk/*
