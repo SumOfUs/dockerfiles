@@ -4,6 +4,7 @@ RUN apk -v --update add \
       build-base \
       bash \
       ruby-dev \
+      libmagickwand-dev \
       imagemagick-dev \
       imagemagick \
       libxml2 \
